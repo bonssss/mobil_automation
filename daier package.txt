@@ -1,0 +1,3 @@
+dumpsys window windows | grep -E 'mTopActivityComponent'
+com.sh.smart.caller
+com.android.dialer.main.impl.MainActivity
