@@ -10,6 +10,10 @@ from selenium.webdriver.common.by import By
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.wait import WebDriverWait
 
+from appium_test.scroll_util import Scroll_Util
+
+
+
 # Define capabilities using UiAutomator2Options
 options = UiAutomator2Options()
 options.platform_name = "Android"  # Specify the platform
@@ -25,14 +29,22 @@ appium_service.start()
 
 # Create Appium driver instance
 driver = webdriver.Remote('http://127.0.0.1:4723', options=options)
-
-driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
-                'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
-                    '.scrollIntoView( new UiSelector().textContains("System ").instance(0));').click()
-
+Scroll_Util.howmanytimetoscroll("System",driver)
+Scroll_Util.scrollup(4,driver)
+Scroll_Util.scrolldown(4,driver)
 # driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
-#     'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
-#     '.scrollIntoView(new UiSelector().textContains("System ").instance(0));').click()
+#                 'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
+#                     '.scrollIntoView( new UiSelector().textContains("System ").instance(0));').click()
+
+
+#  slide down
+# driver.swipe(500,800,500,300, 1000)
+# driver.swipe(500,800,500,300, 1000)
+# driver.swipe(500,800,500,1000, 1000)
+
+#  slide upward
+
+# driver.swipe()
 
 time.sleep(4)
 
