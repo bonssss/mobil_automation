@@ -26,13 +26,19 @@ appium_service.start()
 # Create Appium driver instance
 driver = webdriver.Remote('http://127.0.0.1:4723', options=options)
 
-driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
-                'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
-                    '.scrollIntoView( new UiSelector().textContains("System ").instance(0));').click()
-
 # driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
-#     'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
-#     '.scrollIntoView(new UiSelector().textContains("System ").instance(0));').click()
+#                 'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
+#                     '.scrollIntoView( new UiSelector().textContains("System ").instance(0));').click()
+
+
+#  slide down
+driver.swipe(500,800,500,300, 1000)
+driver.swipe(500,800,500,300, 1000)
+driver.swipe(500,800,500,1000, 1000)
+
+#  slide upward
+
+# driver.swipe()
 
 time.sleep(4)
 
