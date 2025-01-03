@@ -5,8 +5,8 @@ from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from appium.webdriver.appium_service import AppiumService
 from selenium.webdriver.common.by import By
-# from appium.webdriver.common.mobileby import MobileBy
-# from appium.webdriver.common.mobileby import MobileBy
+
+
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -26,20 +26,13 @@ appium_service.start()
 # Create Appium driver instance
 driver = webdriver.Remote('http://127.0.0.1:4723', options=options)
 
-# driver.find_element(By.android_uiautomator('new UiSelector().text("My Phone")')).click()
-driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("My Phone ")').click()
-element = WebDriverWait(driver, 10).until(
-    EC.presence_of_element_located((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Device name")'))
-)
-element.click()
-driver.find_element(By.ID,"com.android.settings:id/oet_edit_text").send_keys("Bons")
-# driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("no_one")').send_keys("Bons")
-driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,'new UiSelector().text("OK")').click()
+driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
+                'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
+                    '.scrollIntoView( new UiSelector().textContains("System ").instance(0));').click()
 
-
-
-
-# driver.find_element(By.ID,"com.android.settings:id/tran_id_content").click()
+# driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR,
+#     'new UiScrollable(new UiSelector().scrollable(true).instance(0))'
+#     '.scrollIntoView(new UiSelector().textContains("System ").instance(0));').click()
 
 time.sleep(4)
 
