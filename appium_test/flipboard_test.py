@@ -7,6 +7,8 @@ from selenium.webdriver.common.by import By
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.ui import WebDriverWait
 
+from scroll_util import Scroll_Util
+
 # Define capabilities using UiAutomator2Options
 options = UiAutomator2Options()
 options.platform_name = "Android"
@@ -48,6 +50,10 @@ WebDriverWait(driver, 30).until(
 ).click()
 
 time.sleep(2)
+Scroll_Util.scrolldown(4,driver)
+time.sleep(2)
+Scroll_Util.scrollup(3,driver)
+
 
 # Stop Appium service
 appium_service.stop()

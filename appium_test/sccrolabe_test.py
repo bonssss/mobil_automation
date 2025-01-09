@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.wait import WebDriverWait
 
-from appium_test.scroll_util import Scroll_Util
+from scroll_util import Scroll_Util
 
 
 
