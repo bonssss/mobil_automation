@@ -49,10 +49,14 @@ WebDriverWait(driver, 30).until(
     EC.element_to_be_clickable((By.ID, "flipboard.app:id/icon_button_text"))
 ).click()
 
+# time.sleep(2)
+# Scroll_Util.scrolldown(4,driver)
+# time.sleep(2)
+# Scroll_Util.scrollup(3,driver)
 time.sleep(2)
-Scroll_Util.scrolldown(4,driver)
+Scroll_Util.scrollleft(3,driver)
 time.sleep(2)
-Scroll_Util.scrollup(3,driver)
+Scroll_Util.scrollright(3,driver)
 
 
 # Stop Appium service

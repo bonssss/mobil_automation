@@ -23,3 +23,11 @@ class Scroll_Util():
         for i in range(1,howmanytime + 1):
             driver.swipe(500, 800, 500, 300, 1000)
 
+    def scrollright(howmanytime,driver):
+        for i in range(1,howmanytime + 1):
+            driver.swipe(200, 600, 700, 600, 1000)
+
+    def scrollleft(howmanytime,driver):
+        for i in range(1,howmanytime + 1):
+            driver.swipe(700, 600, 200, 600, 1000)
+
